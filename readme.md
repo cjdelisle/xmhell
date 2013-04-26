@@ -1,8 +1,8 @@
 # XMHell - XML to JSON and back.
 
-*XML is like violence. Sure, it seems like a quick and easy solution at first, but then it spirals out of control into utter chaos.*
+*XML is like violence. Sure, it seems like a quick and easy solution at first, but then it spirals out of control into utter chaos.* - Sarkos
 
-
+![xml-rocks](https://raw.github.com/cjdelisle/xmhell/master/xml.gif)
 
 This library exports 4 functions.
 
