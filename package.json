@@ -2,7 +2,7 @@
     "author": "Caleb James DeLisle",
     "name": "xmhell",
     "description": "Read XML into a JSON structure and then convert that JSON back into XML.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "repository": {
         "url": "https://github.com/cjdelisle/xmhell.git",
         "type": "git"
