@@ -1,6 +1,8 @@
-# XMHell - If it's good enough for the web, it's good enough for config files!
+# XMHell - XML to JSON and back.
 
-Read XML into a JSON structure and then convert that JSON back into XML.
+*XML is like violence. Sure, it seems like a quick and easy solution at first, but then it spirals out of control into utter chaos.*
+
+
 
 This library exports 4 functions.
 
