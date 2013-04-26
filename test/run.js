@@ -2,7 +2,9 @@
     "use strict";
 
     var tests = [
-        "ReversibilityTest"
+        "ReversibilityTest",
+        "ParserTest",
+        "WriterTest"
     ];
 
     var Whiskey = require('whiskey');

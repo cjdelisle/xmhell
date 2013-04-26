@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:/cjdelisle/cjdns/commits/master</id>
+  <link type="text/html" rel="alternate" href="https://github.com/cjdelisle/cjdns/commits/master" />
+  <link type="application/atom+xml" rel="self" href="https://github.com/cjdelisle/cjdns/commits/master.atom" />
+  <title>Recent Commits to cjdns:master</title>
+  <updated>2013-03-30T18:56:50-07:00</updated>
+  <entry>
+    <id>tag:github.com,2008:Grit::Commit/9c556ebf8484b36c21e0c6fa3d459af0c3258919</id>
+    <link type="text/html" rel="alternate" href="https://github.com/cjdelisle/cjdns/commit/9c556ebf8484b36c21e0c6fa3d459af0c3258919" />
+    <title>
+        Added testimonials
+    </title>
+    <updated>2013-03-30T18:56:50-07:00</updated>
+    <media:thumbnail height="30" width="30" url="https://secure.gravatar.com/avatar/3a8fb5954ff45e40b0964c174df97ae0?s=30&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" />
+    <author>
+      <name>cjdelisle</name>
+      <uri>https://github.com/cjdelisle</uri>
+    </author>
+    <content type="html">
+      &lt;pre&gt;m README.md
+&lt;/pre&gt;
+      &lt;pre style=&#39;white-space:pre-wrap;width:81ex&#39;&gt;Added testimonials&lt;/pre&gt;
+    </content>
+  </entry>
+</feed>

@@ -1,7 +1,67 @@
-# XMHell
+# XMHell - If it's good enough for the web, it's good enough for config files!
 
 Read XML into a JSON structure and then convert that JSON back into XML.
-If it's good enough for the web, it's good enough for config files!
+
+This library exports 4 functions.
+
+* parse: same as JSON.parse(), takes a string and returns a javascript object.
+* write: takes an object, a writer (anything with a function called write), and a callback.
+Writes the JSON object as XML and then calls the callback when complete.
+* escape: Escapes XML entities.
+* unescape: You get the idea.
+
+    > var XMHell = require('xmhell');
+    > j = XMHell.parse('<?xml?>\n<doc><x><y>abcdefg</y></x><!-- comment --></doc>');
+    { doc: 
+       { x: { y: 'abcdefg' },
+         '#COMMENT': ' comment ' } }
+    > 
+    > XMHell.write(j, process.stdout, function() { console.log('done!'); });
+    <?xml version="1.0" encoding="UTF-8"?>
+    <doc>
+      <x>
+        <y>abcdefg</y>
+      </x>
+      <!-- comment -->
+    </doc>
+    done!
+    >
+
+You can provide a function in place of a string in your JSON document and this function will be
+called with a writer and a callback to be called upon completion. The provided writer escapes XML
+entities.
+
+    > var async = function(writer, callback) { writer.write('async & stuff'); callback(); };
+    > XMHell.write({"a":async}, process.stdout);
+    <?xml version="1.0" encoding="UTF-8"?>
+    <a>async &amp; stuff</a>
+
+Multiple tags by the same name are converted to numbered keys in the json hash.
+
+    > XMHell.parse('<?xml?><doc><x/><x/><x/><x/><x/><x/></doc>');
+    { doc: 
+       { x: '',
+         'x 2': '',
+         'x 3': '',
+         'x 4': '',
+         'x 5': '',
+         'x 6': '' } }
+
+Any trailing numbers are stripped from the key when generating the tag name.
+
+    > XMHell.write({'a 9000':1, 'a 3': 2, a:3}, process.stdout);
+    <?xml version="1.0" encoding="UTF-8"?>
+    <a>1</a>
+    <a>2</a>
+    <a>3</a>
+
+Comments, cdata and doctypes are expressed using special keys called `#COMMENT`,
+`#CDATA` and `#DOCTYPE`.
+
+    > XMHell.parse('<?xml?><!DOCTYPE blah><!-- This is a comment --><![CDATA[yay cdata]]>');
+    { '#DOCTYPE': 'blah',
+      '#COMMENT': ' This is a comment ',
+      '#CDATA': 'yay cdata' }
 
 
 ## There are millions of XML parsers, why would you do such a thing?!
@@ -29,11 +89,13 @@ Converts to:
 
 ## How about custom entities?
 
-LOL you're not serious right?
+LOL you're joking right?
 
 ## This idea is bad and you should feel bad.
 
-It was [not](http://en.wikipedia.org/wiki/Jean_Paoli) [my](http://en.wikipedia.org/wiki/Tim_Bray)
+What did you expect? XMHeaven? Anyway this was
+[not](http://en.wikipedia.org/wiki/Jean_Paoli)
+[my](http://en.wikipedia.org/wiki/Tim_Bray)
 [idea](http://en.wikipedia.org/wiki/Michael_Sperberg-McQueen).
 
 ## Your [angle bracket tax](http://www.codinghorror.com/blog/2008/05/xml-the-angle-bracket-tax.html) is due!
