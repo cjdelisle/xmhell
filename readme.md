@@ -10,6 +10,7 @@ Writes the JSON object as XML and then calls the callback when complete.
 * `escape()`: Escapes XML entities.
 * `unescape()`: You get the idea.
 
+Example:
 
     > var XMHell = require('xmhell');
     > j = XMHell.parse('<?xml?>\n<doc><x><y>abcdefg</y></x><!-- comment --></doc>');
