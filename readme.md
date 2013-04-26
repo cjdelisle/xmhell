@@ -4,11 +4,12 @@ Read XML into a JSON structure and then convert that JSON back into XML.
 
 This library exports 4 functions.
 
-* parse: same as JSON.parse(), takes a string and returns a javascript object.
-* write: takes an object, a writer (anything with a function called write), and a callback.
+* `parse()`: same as JSON.parse(), takes a string and returns a javascript object.
+* `write()`: takes an object, a writer (anything with a function called write), and a callback.
 Writes the JSON object as XML and then calls the callback when complete.
-* escape: Escapes XML entities.
-* unescape: You get the idea.
+* `escape()`: Escapes XML entities.
+* `unescape()`: You get the idea.
+
 
     > var XMHell = require('xmhell');
     > j = XMHell.parse('<?xml?>\n<doc><x><y>abcdefg</y></x><!-- comment --></doc>');
