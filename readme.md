@@ -1,5 +1,7 @@
 # XMHell - XML to JSON and back.
 
+Status: Works for "simple" XML (not HTML and or complex XML such as CData), currently unmaintained
+
 *XML is like violence. Sure, it seems like a quick and easy solution at first, but then it spirals out of control into utter chaos.* - Sarkos
 
 ![xml-rocks](https://raw.github.com/cjdelisle/xmhell/master/xml.gif)
